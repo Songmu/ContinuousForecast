@@ -221,7 +221,7 @@ post '/edit/:service_name/:section_name/:graph_name' => [qw/get_metrics/] => sub
         'color' => {
             rule => [
                 ['NOT_NULL', '正しくありません'],
-                [sub{ $_[1] =~ m!^#[0-9A-F]{6}$!i }, '#000000の形式で入力してください'],
+                [sub{ $_[1] =~ m{^#[0-9A-F]{6}$}i }, '#000000の形式で入力してください'],
             ],
         },
     ]);
